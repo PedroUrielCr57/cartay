@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Ajustado para permitir contenido más largo */
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+}
+
+.card-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    width: 90%; /* Permite adaptarse a pantallas pequeñas */
+    margin: 40px auto; /* Margen superior e inferior */
+    text-align: justify;
+    animation: fadeIn 2s ease-in-out;
+    line-height: 1.8; /* Espaciado de líneas para mejor legibilidad */
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #ff6b81;
+    margin-bottom: 20px;
+    text-align: center;
+    animation: slideDown 1.5s ease;
+}
+
+.message {
+    font-size: 1.1em;
+    color: #555;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+
+.heart {
+    width: 60px;
+    height: 60px;
+    margin: 20px auto;
+    background: #ff6b81;
+    position: relative;
+    transform: rotate(-45deg);
+    animation: pulse 1.5s infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    width: 60px;
+    height: 60px;
+    background: #ff6b81;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -30px;
+    left: 0;
+}
+
+.heart::after {
+    left: 30px;
+    top: 0;
+}
+
+.signature {
+    font-size: 1.2em;
+    color: #777;
+    margin-top: 20px;
+    font-style: italic;
+    text-align: center;
+    animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(-45deg);
+    }
+}
+
+/* Media queries para dispositivos más pequeños */
+@media (max-width: 768px) {
+    .card-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .message {
+        font-size: 1em;
+    }
+
+    .signature {
+        font-size: 1em;
+    }
+}
